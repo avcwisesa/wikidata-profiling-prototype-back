@@ -1,1 +1,1 @@
-web: prowd-backend
+web: go-getting-started
