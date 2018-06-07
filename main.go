@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/gin-contrib/cors"
@@ -29,11 +30,17 @@ func main() {
 		log.Println("Error loading .env file, using system ENV only.")
 	}
 
+	preDBEnv := strings.Split(os.Getenv("DATABASE_URL"), "://")
+	dbEnv := strings.Split(preDBEnv[1], "@")
+	dbEnv1 := strings.Split(dbEnv[0], ":")
+	dbEnv2 := strings.Split(dbEnv[1], "/")
+	dbEnv3 := strings.Split(dbEnv2[0], ":")
+
 	client, err := gorm.Open("postgres", fmt.Sprintf("host=%s dbname=%s user=%s password=%s",
-		os.Getenv("DATABASE_URL"),
-		os.Getenv("DB_NAME"),
-		os.Getenv("DB_USER"),
-		os.Getenv("DB_PASSWORD"),
+		dbEnv3[0],
+		dbEnv2[1],
+		dbEnv1[0],
+		dbEnv1[1],
 	))
 
 	if err != nil {
