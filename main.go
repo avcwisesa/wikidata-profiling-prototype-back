@@ -5,7 +5,9 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"time"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/heroku/x/hmetrics/onload"
 	"github.com/jinzhu/gorm"
@@ -15,8 +17,8 @@ import (
 
 type profile struct {
 	gorm.Model
-	Name       string
-	Class      string `json:"name"`
+	Name       string `json:"name"`
+	Class      string `json:"class"`      // JSON string containing name and code for class
 	Facets     string `json:"facets"`     // JSON string containing list of facets, a facet got name and code
 	Attributes string `json:"attributes"` // JSON string containing list of attributes, an attribute got name and code
 }
@@ -49,6 +51,13 @@ func main() {
 
 	router := gin.Default()
 	router.Use(gin.Logger())
+	router.Use(cors.New(cors.Config{
+		AllowAllOrigins:  true,
+		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD"},
+		AllowHeaders:     []string{"Origin", "Content-Length", "Content-Type", "Authorization"},
+		AllowCredentials: false,
+		MaxAge:           12 * time.Hour,
+	}))
 
 	// Ping handler
 	router.GET("/", func(ctx *gin.Context) {
@@ -128,6 +137,7 @@ func createProfile(client *gorm.DB, newProfile profile) (profile, error) {
 	if err := client.Where(&profile{Name: newProfile.Name}).First(&profile{}).Error; err != nil {
 		client.Create(&profile{
 			Name:       newProfile.Name,
+			Class:      newProfile.Class,
 			Facets:     newProfile.Facets,
 			Attributes: newProfile.Attributes,
 		})

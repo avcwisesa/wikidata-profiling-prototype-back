@@ -3,6 +3,12 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "V6gJx3kala+tjfo/ynTjg1u5OxI=",
+			"path": "github.com/gin-contrib/cors",
+			"revision": "6f0a820f94bea07359ec77c26855ca8cf6762739",
+			"revisionTime": "2018-05-14T15:18:08Z"
+		},
+		{
 			"checksumSHA1": "QeKwBtN2df+j+4stw3bQJ6yO4EY=",
 			"path": "github.com/gin-contrib/sse",
 			"revision": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae",
@@ -33,10 +39,10 @@
 			"revisionTime": "2018-05-31T06:13:40Z"
 		},
 		{
-			"checksumSHA1": "8e94vVGc8ssfxcpgDSGLmp1hRJM=",
+			"checksumSHA1": "JZV+pLo8Z/kIYExrZr1Zu9KSKyU=",
 			"path": "github.com/golang/protobuf/proto",
-			"revision": "3a3da3a4e26776cc22a79ef46d5d58477532dede",
-			"revisionTime": "2018-05-22T22:42:51Z"
+			"revision": "05f48f4eaf0e05663b562bab533cdd472238ce29",
+			"revisionTime": "2018-06-06T20:26:30Z"
 		},
 		{
 			"checksumSHA1": "qHpoguf0n1mueKbYN5/Cr10461M=",
@@ -125,8 +131,8 @@
 		{
 			"checksumSHA1": "VUb+SqeoloAw1A2Jz9IzkDNs06c=",
 			"path": "golang.org/x/sys/unix",
-			"revision": "c11f84a56e43e20a78cee75a7c034031ecf57d1f",
-			"revisionTime": "2018-05-25T13:55:20Z"
+			"revision": "9527bec2660bd847c050fda93a0f0c6dee0800bb",
+			"revisionTime": "2018-06-06T19:45:53Z"
 		},
 		{
 			"checksumSHA1": "P/k5ZGf0lEBgpKgkwy++F7K1PSg=",
