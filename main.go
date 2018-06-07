@@ -131,7 +131,7 @@ func retrieveAllProfile(client *gorm.DB) ([]profile, error) {
 func retrieveProfileByID(client *gorm.DB, id uint) (profile, error) {
 
 	var retrievedProfile profile
-	if err := client.First(&profile{}, id).Error; err != nil {
+	if err := client.First(&retrievedProfile, id).Error; err != nil {
 		return profile{}, err
 	}
 
