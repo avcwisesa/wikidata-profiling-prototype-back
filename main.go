@@ -30,7 +30,7 @@ func main() {
 	}
 
 	client, err := gorm.Open("postgres", fmt.Sprintf("host=%s dbname=%s user=%s password=%s",
-		os.Getenv("DB_HOST"),
+		os.Getenv("DATABASE_URL"),
 		os.Getenv("DB_NAME"),
 		os.Getenv("DB_USER"),
 		os.Getenv("DB_PASSWORD"),
