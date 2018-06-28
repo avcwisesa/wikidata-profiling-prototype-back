@@ -22,6 +22,7 @@ type profile struct {
 	Class      string `json:"class"`      // JSON string containing name and code for class
 	Facets     string `json:"facets"`     // JSON string containing list of facets, a facet got name and code
 	Attributes string `json:"attributes"` // JSON string containing list of attributes, an attribute got name and code
+	Subclass   bool   `json:"subclass"`   // Determining if the subclasses are to be included
 }
 
 func main() {
@@ -147,6 +148,7 @@ func createProfile(client *gorm.DB, newProfile profile) (profile, error) {
 			Class:      newProfile.Class,
 			Facets:     newProfile.Facets,
 			Attributes: newProfile.Attributes,
+			Subclass:   newProfile.Subclass,
 		})
 	}
 
