@@ -114,6 +114,17 @@ func main() {
 		ctx.JSON(200, profile)
 	})
 
+	router.DELETE("profile/:id", func(ctx *gin.Context) {
+		id, _ := strconv.Atoi(ctx.Param("id"))
+
+		profile, err := deleteProfile(client, uint(id))
+		if err != nil {
+			ctx.JSON(500, err)
+		}
+
+		ctx.JSON(200, profile)
+	})
+
 	router.Run(":" + port)
 }
 
@@ -154,4 +165,17 @@ func createProfile(client *gorm.DB, newProfile profile) (profile, error) {
 
 	client.Where(&profile{Name: newProfile.Name}).First(&newProfile)
 	return newProfile, nil
+}
+
+// deleteProfile is a function to delete exiting profile
+func deleteProfile(client *gorm.DB, id uint) (profile, error) {
+
+	var oldProfile profile
+	if err := client.First(&oldProfile, id).Error; err != nil {
+		return profile{}, err
+	}
+
+	client.Delete(&oldProfile)
+
+	return oldProfile, nil
 }
