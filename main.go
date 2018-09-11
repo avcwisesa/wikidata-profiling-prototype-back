@@ -114,6 +114,29 @@ func main() {
 		ctx.JSON(200, profile)
 	})
 
+	router.PUT("profile/:id", func(ctx *gin.Context) {
+
+		var newProfile profile
+		err := ctx.ShouldBindJSON(&newProfile)
+		if err != nil {
+			ctx.JSON(400, err)
+			log.Println("json")
+			log.Println(err)
+			return
+		}
+
+		id, _ := strconv.Atoi(ctx.Param("id"))
+		profile, err := updateProfile(client, uint(id), newProfile)
+		if err != nil {
+			log.Println("db")
+			log.Println(err)
+			ctx.JSON(500, err)
+		}
+
+		log.Println("success")
+		ctx.JSON(200, profile)
+	})
+
 	router.DELETE("profile/:id", func(ctx *gin.Context) {
 		id, _ := strconv.Atoi(ctx.Param("id"))
 
@@ -164,6 +187,26 @@ func createProfile(client *gorm.DB, newProfile profile) (profile, error) {
 	}
 
 	client.Where(&profile{Name: newProfile.Name}).First(&newProfile)
+	return newProfile, nil
+}
+
+func updateProfile(client *gorm.DB, id uint, newProfile profile) (profile, error) {
+
+	var oldProfile profile
+	if err := client.First(&oldProfile, id).Error; err != nil {
+		return profile{}, err
+	}
+
+	oldProfile.Name =       newProfile.Name
+	oldProfile.Class =      newProfile.Class
+	oldProfile.Facets =     newProfile.Facets
+	oldProfile.Attributes = newProfile.Attributes
+	oldProfile.Subclass =   newProfile.Subclass
+
+	if err := client.Save(&oldProfile).Error; err != nil {
+		return profile{}, err
+	}
+
 	return newProfile, nil
 }
 
