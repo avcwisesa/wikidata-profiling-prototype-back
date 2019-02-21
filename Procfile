@@ -1,1 +1,1 @@
-web: prowd-prototype-backend
+web: wikidata-profiling-backend
