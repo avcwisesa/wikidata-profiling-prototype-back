@@ -15,16 +15,16 @@
 			"revisionTime": "2017-01-09T09:34:21Z"
 		},
 		{
-			"checksumSHA1": "J9Wy/bT7FckPvRzC0uSW6Tpg6Yc=",
+			"checksumSHA1": "v21JXdtqweHuaH6P4siuahHhRPk=",
 			"path": "github.com/gin-gonic/gin",
-			"revision": "caf3e350a548af1add9def68087ac53d1d000caa",
-			"revisionTime": "2018-05-31T06:13:40Z"
+			"revision": "e6886e1539d89365f9970e1b5d9af1a2ccea16d9",
+			"revisionTime": "2019-02-21T12:32:55Z"
 		},
 		{
-			"checksumSHA1": "O2rrqYI7QQjJYVx8+E8DC8rlIh0=",
+			"checksumSHA1": "dwqR5FHzisG3RHUPwri18R2FbGg=",
 			"path": "github.com/gin-gonic/gin/binding",
-			"revision": "caf3e350a548af1add9def68087ac53d1d000caa",
-			"revisionTime": "2018-05-31T06:13:40Z"
+			"revision": "e6886e1539d89365f9970e1b5d9af1a2ccea16d9",
+			"revisionTime": "2019-02-21T12:32:55Z"
 		},
 		{
 			"checksumSHA1": "woO1qIxIeQ1bcbPSiMfAKk3r4xg=",
@@ -33,10 +33,10 @@
 			"revisionTime": "2018-05-31T06:13:40Z"
 		},
 		{
-			"checksumSHA1": "DGs8sdsCkNHsU9+fQMM9XHb+ZCE=",
+			"checksumSHA1": "kejRUqZtLFaFguSYfwQxnsUPhOY=",
 			"path": "github.com/gin-gonic/gin/render",
-			"revision": "caf3e350a548af1add9def68087ac53d1d000caa",
-			"revisionTime": "2018-05-31T06:13:40Z"
+			"revision": "e6886e1539d89365f9970e1b5d9af1a2ccea16d9",
+			"revisionTime": "2019-02-21T12:32:55Z"
 		},
 		{
 			"checksumSHA1": "JZV+pLo8Z/kIYExrZr1Zu9KSKyU=",
@@ -105,10 +105,10 @@
 			"revisionTime": "2018-05-23T17:54:26Z"
 		},
 		{
-			"checksumSHA1": "w5RcOnfv5YDr3j2bd1YydkPiZx4=",
+			"checksumSHA1": "GiVgQkx5acnq+JZtYiuHPlhHoso=",
 			"path": "github.com/mattn/go-isatty",
-			"revision": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c",
-			"revisionTime": "2017-11-07T05:05:31Z"
+			"revision": "3fb116b820352b7f0c281308a4d6250c22d94e27",
+			"revisionTime": "2018-08-30T10:17:45Z"
 		},
 		{
 			"checksumSHA1": "ZTcgWKWHsrX0RXYVXn5Xeb8Q0go=",
@@ -147,5 +147,5 @@
 			"revisionTime": "2018-03-28T19:50:20Z"
 		}
 	],
-	"rootPath": "github.com/avcwisesa/wikidata-profiling-backend"
+	"rootPath": "github.com/avcwisesa/wikidata-profiling-prototype-back"
 }
